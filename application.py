@@ -124,8 +124,8 @@ def submit_data():
         y=df.Recovery_Period
         
 
-        from sklearn.svm import SVR
-        regressor = SVR(kernel='rbf')
+        from sklearn.ensemble import RandomForestRegressor
+        regressor = RandomForestRegressor()
         regressor.fit(X,y)
         y_pred = regressor.predict([X_test])
         ans =int(round(y_pred[0]))
